@@ -1,0 +1,19 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"target": "es6",
+		"types": ["@emotion/react/types/css-prop", "@types/jest"],
+		"strict": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react-jsx",
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "."
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
+}
