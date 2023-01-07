@@ -111,9 +111,6 @@ export const reset = css`
 	section {
 		display: block;
 	}
-	:root {
-		font-size: 4vw;
-	}
 	body {
 		line-height: 1;
 		font-family: 'GmarketSansMedium';
