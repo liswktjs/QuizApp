@@ -5,7 +5,9 @@ const colors = {
 };
 
 const zIndex = {
-	SNACK_BAR: '10',
+	SNACK_BAR: 10,
+	TIMER_BACKGROUND: -2,
+	TIMER: -1,
 };
 
 const theme = {

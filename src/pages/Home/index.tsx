@@ -20,7 +20,7 @@ const Home = () => {
 
 	const onGameStartButtonClick = () => {
 		if (isFetchQuizSuccess) {
-			setGameState({ isProgress: true });
+			setGameState({ isProgress: true, isEnd: false });
 			navigate('/workbook/1');
 		}
 		if (isFetchQuizError) {

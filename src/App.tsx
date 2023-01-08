@@ -8,6 +8,7 @@ import Workbook from './pages/Workbook/index';
 import QuizResult from './pages/QuizResult';
 
 import SnackBar from './components/@common/SnackBar/SnackBar';
+import Timer from './components/Timer/Timer';
 
 import { preventRefresh } from './utils';
 
@@ -31,6 +32,7 @@ const App = () => {
 				<Route path={'/*'} element={<NotFound />} />
 			</Routes>
 			<SnackBar />
+			<Timer />
 		</Layout>
 	);
 };
