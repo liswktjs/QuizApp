@@ -5,7 +5,7 @@ export interface QuizResponseType {
 
 export interface QuizItemType {
 	category: string;
-	type: 'multiple' | 'boolean';
+	type: 'multiple';
 	difficulty: 'easy' | 'medium' | 'hard';
 	question: string;
 	correct_answer: string;
@@ -16,4 +16,5 @@ export interface UserAnswerItemType {
 	isCorrect: boolean;
 	answer: string;
 	userChoice: string;
+	quizIndex: number;
 }
