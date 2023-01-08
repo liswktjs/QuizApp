@@ -8,6 +8,7 @@ const snackBarStateAtom = atom({
 
 const gameStateAtom = atom({
 	isProgress: false,
+	isEnd: false,
 });
 
 const gameReportAtom = atom<UserAnswerItemType[]>([]);

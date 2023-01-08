@@ -4,7 +4,10 @@ import styled from '@emotion/styled';
 
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Workbook from './pages/Workbook/ index';
+import Workbook from './pages/Workbook/index';
+import QuizResult from './pages/QuizResult';
+
+import SnackBar from './components/@common/SnackBar/SnackBar';
 
 import { preventRefresh } from './utils';
 
@@ -24,8 +27,10 @@ const App = () => {
 			<Routes>
 				<Route path={'/'} element={<Home />} />
 				<Route path={'/workbook/:id'} element={<Workbook />} />
+				<Route path={'/quiz-result'} element={<QuizResult />} />
 				<Route path={'/*'} element={<NotFound />} />
 			</Routes>
+			<SnackBar />
 		</Layout>
 	);
 };
