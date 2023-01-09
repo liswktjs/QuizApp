@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Workbook from './pages/Workbook/index';
 import QuizResult from './pages/QuizResult';
+import WrongAnswerNote from './pages/WrongAnswerNote';
 
 import SnackBar from './components/@common/SnackBar/SnackBar';
 import Timer from './components/Timer/Timer';
@@ -29,6 +30,7 @@ const App = () => {
 				<Route path={'/'} element={<Home />} />
 				<Route path={'/workbook/:id'} element={<Workbook />} />
 				<Route path={'/quiz-result'} element={<QuizResult />} />
+				<Route path={'/wrong-answer-note'} element={<WrongAnswerNote />} />
 				<Route path={'/*'} element={<NotFound />} />
 			</Routes>
 			<SnackBar />
