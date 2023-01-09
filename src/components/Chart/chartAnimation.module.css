@@ -1,0 +1,14 @@
+.isInActive {
+	height: 0;
+	transform: translate3d(0, 0, 0);
+	transition: transform 200ms ease-in-out;
+	visibility: hidden;
+	opacity: 0;
+}
+.isActive {
+	transform: translate3d(0, 0, 0);
+	transition: all 200ms ease-in-out;
+	visibility: visible;
+	opacity: 1;
+	height: 100%;
+}

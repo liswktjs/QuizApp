@@ -1,5 +1,7 @@
 const colors = {
 	GREEN_500: '#00c896',
+	BLUE_500: '#53BBE4',
+	RED_500: '#EF7676',
 	WHITE: '#ffffff',
 	BLACK: '#111111',
 };
