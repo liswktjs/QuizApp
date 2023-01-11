@@ -1,6 +1,6 @@
 import Button from '../../components/@common/Button/Button';
 
-import useWorkbookState from './useWorkbookState';
+import useWorkbookState from './hooks/useWorkbookState';
 
 import * as S from './index.styles';
 

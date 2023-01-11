@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAtom, useSetAtom } from 'jotai';
 
-import useHandleQuizState from '../../hooks/useHandleQuizState';
-import useSnackBar from '../../hooks/useSnackBar';
+import useHandleQuizState from '../../../hooks/useHandleQuizState';
+import useSnackBar from '../../../hooks/useSnackBar';
 
-import { gameReportAtom, gameStateAtom } from '../../store';
+import { gameReportAtom, gameStateAtom } from '../../../store';
 
 const useWorkbookState = () => {
 	const { id } = useParams();
