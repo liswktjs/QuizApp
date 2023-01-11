@@ -18,3 +18,11 @@ export interface UserAnswerItemType {
 	userChoice: string;
 	quizIndex: number;
 }
+
+export interface UserWrongAnswerItemType {
+	difficulty: 'easy' | 'medium' | 'hard';
+	question: string;
+	answer: string;
+	userChoice: string;
+	incorrect_answers: string[];
+}
