@@ -6,23 +6,24 @@ import useQuizResultState from './hooks/useQuizResultState';
 import * as S from './index.styles';
 
 const QuizResult = () => {
-	const { rightCount, wrongCount, onWrongAnswerNoteButtonClick } =
+	const { takingTime, rightCount, wrongCount, onWrongAnswerNoteButtonClick } =
 		useQuizResultState();
 
 	return (
 		<S.Container>
 			<S.Title>풀이 결과</S.Title>
 			<S.Report>
-				<div>정답 개수: {rightCount}</div>
-				<div>오답 개수: {wrongCount} </div>
+				<div>정답 : {rightCount}개</div>
+				<div>오답 : {wrongCount}개</div>
+				<div>총 소요 시간: {takingTime}</div>
 			</S.Report>
-			<S.Chart>
+			<S.ChartContainer>
 				<Chart
 					totalCount={rightCount + wrongCount}
 					rightCount={rightCount}
 					wrongCount={wrongCount}
 				/>
-			</S.Chart>
+			</S.ChartContainer>
 			<S.ButtonContainer>
 				<Button onClick={onWrongAnswerNoteButtonClick}>오답 노트</Button>
 			</S.ButtonContainer>

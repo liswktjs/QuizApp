@@ -6,6 +6,10 @@ const snackBarStateAtom = atom({
 	message: '',
 });
 
+const timerStateAtom = atom({
+	isToggle: false,
+});
+
 const gameStateAtom = atom({
 	isProgress: false,
 	isEnd: false,
@@ -13,4 +17,15 @@ const gameStateAtom = atom({
 
 const gameReportAtom = atom<UserAnswerItemType[]>([]);
 
-export { snackBarStateAtom, gameStateAtom, gameReportAtom };
+const gameTakingTime = atom({
+	min: 0,
+	sec: 0,
+});
+
+export {
+	snackBarStateAtom,
+	timerStateAtom,
+	gameStateAtom,
+	gameReportAtom,
+	gameTakingTime,
+};
