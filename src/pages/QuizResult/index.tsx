@@ -6,8 +6,13 @@ import useQuizResultState from './hooks/useQuizResultState';
 import * as S from './index.styles';
 
 const QuizResult = () => {
-	const { takingTime, rightCount, wrongCount, onWrongAnswerNoteButtonClick } =
-		useQuizResultState();
+	const {
+		takingTime,
+		rightCount,
+		wrongCount,
+		onWrongAnswerNoteButtonClick,
+		onHomeButtonClick,
+	} = useQuizResultState();
 
 	return (
 		<S.Container>
@@ -25,7 +30,12 @@ const QuizResult = () => {
 				/>
 			</S.ChartContainer>
 			<S.ButtonContainer>
-				<Button onClick={onWrongAnswerNoteButtonClick}>오답 노트</Button>
+				{wrongCount === 0 && (
+					<Button onClick={onHomeButtonClick}>홈으로 이동</Button>
+				)}
+				{wrongCount >= 1 && (
+					<Button onClick={onWrongAnswerNoteButtonClick}>오답 노트</Button>
+				)}
 			</S.ButtonContainer>
 		</S.Container>
 	);

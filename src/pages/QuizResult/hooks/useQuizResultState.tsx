@@ -40,11 +40,16 @@ const useQuizResultState = () => {
 		navigate('/wrong-answer-note');
 	};
 
+	const onHomeButtonClick = () => {
+		navigate('/');
+	};
+
 	return {
 		takingTime,
 		rightCount: getAnswerCount(true),
 		wrongCount: getAnswerCount(false),
 		onWrongAnswerNoteButtonClick,
+		onHomeButtonClick,
 	};
 };
 
