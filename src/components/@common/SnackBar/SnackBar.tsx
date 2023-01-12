@@ -52,11 +52,11 @@ const MessageBox = styled.div`
 	display: flex;
 	justify-content: center;
 	font-size: 1rem;
-	padding: 10px;
+	padding: 15px;
 
-	width: 80%;
+	width: 500px;
 	border-radius: 4px;
-	margin-bottom: 1.25rem;
+	margin-bottom: 40px;
 
 	word-break: keep-all;
 `;
