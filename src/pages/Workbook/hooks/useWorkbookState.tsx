@@ -65,6 +65,7 @@ const useWorkbookState = () => {
 	};
 
 	return {
+		id,
 		problemList,
 		question,
 		selectedQuizItem,

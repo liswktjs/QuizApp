@@ -1,3 +1,4 @@
+import QuizItem from '../../components/QuizItem/QuizItem';
 import Button from '../../components/@common/Button/Button';
 
 import useWorkbookState from './hooks/useWorkbookState';
@@ -6,6 +7,7 @@ import * as S from './index.styles';
 
 const Workbook = () => {
 	const {
+		id,
 		problemList,
 		question,
 		selectedQuizItem,
@@ -20,26 +22,23 @@ const Workbook = () => {
 		<div>
 			{problemList && (
 				<S.Container>
-					<S.Question>{question}</S.Question>
-					<S.QuizList>
-						{problemList.map((item, index) => (
-							<S.QuizItem
-								key={index}
-								isSelected={item === selectedQuizItem}
-								onClick={() => onQuizItemClick(item)}
-							>
-								{item}
-							</S.QuizItem>
-						))}
-					</S.QuizList>
-					<S.ButtonContainer>
-						{isSelected && isNextExist && (
-							<Button onClick={onNextQuizButtonClick}>다음 문제</Button>
-						)}
-						{isSelected && !isNextExist && (
-							<Button onClick={onFinalQuizButtonClick}>결과 보기</Button>
-						)}
-					</S.ButtonContainer>
+					<S.QuizContentContainer>
+						<QuizItem
+							id={id}
+							question={question}
+							problemList={problemList}
+							selectedQuizItem={selectedQuizItem}
+							onQuizItemClick={onQuizItemClick}
+						/>
+						<S.ButtonContainer>
+							{isSelected && isNextExist && (
+								<Button onClick={onNextQuizButtonClick}>다음 문제</Button>
+							)}
+							{isSelected && !isNextExist && (
+								<Button onClick={onFinalQuizButtonClick}>결과 보기</Button>
+							)}
+						</S.ButtonContainer>
+					</S.QuizContentContainer>
 				</S.Container>
 			)}
 		</div>

@@ -1,35 +1,24 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.article``;
-
-export const Question = styled.h2``;
-
-export const QuizList = styled.ul`
+export const Container = styled.article`
 	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
 `;
 
-export const QuizItem = styled.li<{ isSelected: boolean }>`
+export const QuizContentContainer = styled.div`
+	margin-top: 20px;
+`;
+
+export const ButtonContainer = styled.div`
 	display: flex;
+	justify-content: flex-end;
 	width: 100%;
+	margin-top: 20px;
 
-	border-radius: 4px;
-	padding: 10px;
-
-	${({ theme, isSelected }) => `
-    background: ${isSelected ? theme.colors.GREEN_500 : theme.colors.WHITE};
-    border: 1px solid ${
-			isSelected ? theme.colors.GREEN_500 : theme.colors.BLACK
-		};
-    color: ${isSelected ? theme.colors.WHITE : theme.colors.BLACK};
-
-    &:hover, 
-    &:active {
-      background: ${theme.colors.GREEN_500};
-      border: ${theme.colors.GREEN_500};
-      color: ${theme.colors.WHITE};
-      cursor: pointer;
-	  }
-  `}
+	button {
+		width: 200px;
+	}
 `;
-
-export const ButtonContainer = styled.div``;
