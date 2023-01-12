@@ -1,4 +1,4 @@
-import { useAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/@common/Button/Button';
@@ -16,7 +16,7 @@ const Home = () => {
 		isError: isFetchQuizError,
 		refetch,
 	} = useGetQuizzes();
-	const [_, setGameState] = useAtom(gameStateAtom);
+	const setGameState = useSetAtom(gameStateAtom);
 
 	const onGameStartButtonClick = () => {
 		if (isFetchQuizSuccess) {
