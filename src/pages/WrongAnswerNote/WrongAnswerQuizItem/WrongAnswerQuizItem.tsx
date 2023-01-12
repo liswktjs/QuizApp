@@ -35,8 +35,8 @@ const WrongAnswerQuizItem = ({
 			</UserChoice>
 			<WrongAnswerList>
 				<div>이외의 문제 보기들</div>
-				{filterUserChoice().map((item) => (
-					<WrongAnswerItem>{item}</WrongAnswerItem>
+				{filterUserChoice().map((item, index) => (
+					<WrongAnswerItem key={index}>{item}</WrongAnswerItem>
 				))}
 			</WrongAnswerList>
 		</Container>
