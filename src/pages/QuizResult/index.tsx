@@ -1,6 +1,7 @@
 import { useAtomValue } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
+import Chart from '../../components/Chart/Chart';
 import Button from '../../components/@common/Button/Button';
 
 import { gameReportAtom } from '../../store';
@@ -31,6 +32,8 @@ const QuizResult = () => {
 		}
 		return result;
 	};
+	const rightCount = getAnswerCount(true);
+	const wrongCount = getAnswerCount(false);
 
 	const onWrongAnswerNoteButtonClick = () => {
 		navigate('/wrong-answer-note');
@@ -40,10 +43,16 @@ const QuizResult = () => {
 		<S.Container>
 			<S.Title>풀이 결과</S.Title>
 			<S.Report>
-				<div>정답 개수: {getAnswerCount(true)}</div>
-				<div>오답 개수: {getAnswerCount(false)} </div>
+				<div>정답 개수: {rightCount}</div>
+				<div>오답 개수: {wrongCount} </div>
 			</S.Report>
-			<S.Chart></S.Chart>
+			<S.Chart>
+				<Chart
+					totalCount={rightCount + wrongCount}
+					rightCount={rightCount}
+					wrongCount={wrongCount}
+				/>
+			</S.Chart>
 			<S.ButtonContainer>
 				<Button onClick={onWrongAnswerNoteButtonClick}>오답 노트</Button>
 			</S.ButtonContainer>
