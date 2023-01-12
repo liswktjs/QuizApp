@@ -3,7 +3,7 @@ import { queryClient } from '../';
 
 import { QuizResponseType } from '../types/quiz';
 
-import { makeRandomQuizList } from '../utils';
+import { changeCodeToString, makeRandomQuizList } from '../utils';
 
 const useHandleQuizState = (currentId: number) => {
 	const quizList: QuizResponseType | undefined = queryClient.getQueryData([
@@ -24,13 +24,13 @@ const useHandleQuizState = (currentId: number) => {
 			makeRandomQuizList({
 				correctAnswer: quiz.correct_answer,
 				inCorrectAnswer: quiz.incorrect_answers,
-			}),
+			}).map((item) => changeCodeToString(item)),
 		[currentId],
 	);
 
 	return {
-		answer: quiz.correct_answer,
-		question: quiz.question,
+		answer: changeCodeToString(quiz.correct_answer),
+		question: changeCodeToString(quiz.question),
 		problemList,
 		isNextExist: currentId === quizList.results.length ? false : true,
 	};

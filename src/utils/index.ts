@@ -14,3 +14,14 @@ export const makeRandomQuizList = ({
 	questionList.sort(() => Math.random() - 0.5);
 	return questionList;
 };
+
+export const changeCodeToString = (content: string) => {
+	content = content.replaceAll('<br>', '\n');
+	content = content.replaceAll('&gt;', '>');
+	content = content.replaceAll('&lt;', '<');
+	content = content.replaceAll('&quot;', '');
+	content = content.replaceAll('&nbsp;', ' ');
+	content = content.replaceAll('&amp;', '&');
+
+	return content;
+};
