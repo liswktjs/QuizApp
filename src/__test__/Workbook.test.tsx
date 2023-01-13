@@ -99,4 +99,38 @@ describe('Workbook 관련 테스트', () => {
 		expect(questionIndex.textContent).toEqual('문제 1');
 		expect(selectorList.length).toEqual(4);
 	});
+
+	test('답안을 눌렀을 때에, 다음문제 버튼이 보여진다', async () => {
+		render(<App />, { wrapper });
+
+		const { result: quizState, waitFor } = renderHook(
+			() => useHandleQuizState(1),
+			{ wrapper },
+		);
+		await waitFor(() => quizState.current.problemList.length >= 1);
+
+		const selectorList = screen.getAllByTestId('quiz-item');
+		fireEvent.click(selectorList[0]);
+
+		const nextQuizButton = screen.getByTestId('next-quiz-button');
+		expect(nextQuizButton.textContent).toEqual('다음 문제');
+	});
+
+	test('다음 문제 버튼을 눌렀을 때에, 2번째 퀴즈가 보여진다', async () => {
+		render(<App />, { wrapper });
+
+		const { result: quizState, waitFor } = renderHook(
+			() => useHandleQuizState(1),
+			{ wrapper },
+		);
+		await waitFor(() => quizState.current.problemList.length >= 1);
+		const selectorList = screen.getAllByTestId('quiz-item');
+		fireEvent.click(selectorList[0]);
+
+		const nextQuizButton = screen.getByTestId('next-quiz-button');
+		fireEvent.click(nextQuizButton);
+
+		const nextQuizIndex = screen.getByTestId('question-index');
+		expect(nextQuizIndex.textContent).toEqual('문제 2');
+	});
 });
