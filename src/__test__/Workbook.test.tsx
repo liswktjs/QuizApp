@@ -133,4 +133,20 @@ describe('Workbook 관련 테스트', () => {
 		const nextQuizIndex = screen.getByTestId('question-index');
 		expect(nextQuizIndex.textContent).toEqual('문제 2');
 	});
+
+	test('답안을 클릭 했을 때에, snackBar을 통해 안내문구가 보여진다', async () => {
+		render(<App />, { wrapper });
+
+		const { result: quizState, waitFor } = renderHook(
+			() => useHandleQuizState(1),
+			{ wrapper },
+		);
+		await waitFor(() => quizState.current.problemList.length >= 1);
+
+		const selectorList = screen.getAllByTestId('quiz-item');
+		fireEvent.click(selectorList[0]);
+
+		const snackBar = screen.getByTestId('snack-bar');
+		expect(snackBar.textContent).toContain('입니다');
+	});
 });

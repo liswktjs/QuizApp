@@ -20,7 +20,7 @@ const SnackBar = () => {
 	return (
 		<CreatePortal modalId="snack-bar">
 			{snackBarState.isActive && (
-				<Container>
+				<Container data-testid={'snack-bar'}>
 					<MessageBox className={snackBarClassName}>
 						{snackBarState.message}
 					</MessageBox>
