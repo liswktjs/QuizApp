@@ -1,19 +1,21 @@
-import { ThemeProvider } from '@emotion/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '@testing-library/jest-dom';
 import { renderHook } from '@testing-library/react-hooks';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import React from 'react';
-
 import { BrowserRouter } from 'react-router-dom';
-import * as router from 'react-router';
-import theme from '../styles/theme';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from '@emotion/react';
 
-import { QuizHandler } from '../mock';
 import { setupServer } from 'msw/node';
+import { QuizHandler } from '../mock';
 
 import useHandleQuizState from '../hooks/useHandleQuizState';
-
 import useGetQuizzes from '../hooks/useGetQuizzes';
+
+import theme from '../styles/theme';
+
+import App from '../App';
 
 const server = setupServer(...QuizHandler);
 
@@ -27,8 +29,8 @@ describe('Workbook 관련 테스트', () => {
 	const queryClient = new QueryClient({
 		defaultOptions: {
 			queries: {
-				retry: 1,
-				retryDelay: 1,
+				retry: 2,
+				retryDelay: 2,
 			},
 		},
 	});
@@ -43,11 +45,9 @@ describe('Workbook 관련 테스트', () => {
 			</QueryClientProvider>
 		</ThemeProvider>
 	);
-	const navigate = jest.fn();
 
 	beforeAll(() => {
 		server.listen();
-		jest.spyOn(router, 'useNavigate').mockImplementation(() => navigate);
 	});
 	afterEach(() => {
 		server.resetHandlers();
@@ -74,5 +74,29 @@ describe('Workbook 관련 테스트', () => {
 		);
 		expect(quizState.current.answer).toEqual('Mitochondria');
 		expect(quizState.current.problemList.length).toEqual(4);
+	});
+
+	test('Workbook 페이지에 문제들이 렌더링 되었는지 확인한다', async () => {
+		render(<App />, { wrapper });
+		const { result: quizResult, waitFor: waitGetQuizFor } = renderHook(
+			() => useGetQuizzes(),
+			{
+				wrapper,
+			},
+		);
+		await waitGetQuizFor(() => quizResult.current.isSuccess);
+		const startQuizButton = screen.getByTestId('start-quiz-button');
+		fireEvent.click(startQuizButton);
+
+		const { result: quizState, waitFor } = renderHook(
+			() => useHandleQuizState(1),
+			{ wrapper },
+		);
+		await waitFor(() => quizState.current.problemList.length >= 1);
+
+		const questionIndex = screen.getByTestId('question-index');
+		const selectorList = screen.getAllByTestId('quiz-item');
+		expect(questionIndex.textContent).toEqual('문제 1');
+		expect(selectorList.length).toEqual(4);
 	});
 });
