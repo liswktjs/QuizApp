@@ -76,7 +76,7 @@ const Timer = () => {
 	return (
 		<CreatePortal modalId="timer">
 			<Container>
-				<TimerBox className={timerClassName}>
+				<TimerBox data-testid={'timer'} className={timerClassName}>
 					<ToggleButton onClick={onToggleButtonClick}>
 						<ToggleIcon isToggle={timerState.isToggle} />
 					</ToggleButton>

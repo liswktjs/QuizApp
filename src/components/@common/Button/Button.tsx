@@ -3,10 +3,19 @@ import { PropsWithChildren } from 'react';
 
 export interface ButtonProps {
 	onClick: () => void;
+	testName?: string;
 }
 
-const Button = ({ onClick, children }: PropsWithChildren<ButtonProps>) => {
-	return <Container onClick={onClick}>{children}</Container>;
+const Button = ({
+	onClick,
+	testName,
+	children,
+}: PropsWithChildren<ButtonProps>) => {
+	return (
+		<Container data-testid={testName} onClick={onClick}>
+			{children}
+		</Container>
+	);
 };
 
 const Container = styled.button`

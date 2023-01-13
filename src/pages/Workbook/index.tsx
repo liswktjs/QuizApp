@@ -32,10 +32,20 @@ const Workbook = () => {
 						/>
 						<S.ButtonContainer>
 							{isSelected && isNextExist && (
-								<Button onClick={onNextQuizButtonClick}>다음 문제</Button>
+								<Button
+									testName={'next-quiz-button'}
+									onClick={onNextQuizButtonClick}
+								>
+									다음 문제
+								</Button>
 							)}
 							{isSelected && !isNextExist && (
-								<Button onClick={onFinalQuizButtonClick}>결과 보기</Button>
+								<Button
+									testName={'final-quiz-button'}
+									onClick={onFinalQuizButtonClick}
+								>
+									결과 보기
+								</Button>
 							)}
 						</S.ButtonContainer>
 					</S.QuizContentContainer>

@@ -33,7 +33,9 @@ const Home = () => {
 		<S.Container>
 			<S.Title>클래스팅- Quiz App</S.Title>
 			<S.ButtonContainer>
-				<Button onClick={onGameStartButtonClick}>퀴즈풀기</Button>
+				<Button testName={'start-quiz-button'} onClick={onGameStartButtonClick}>
+					퀴즈풀기
+				</Button>
 			</S.ButtonContainer>
 		</S.Container>
 	);

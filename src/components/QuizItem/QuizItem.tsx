@@ -18,12 +18,13 @@ const QuizItem = ({
 	return (
 		<Container>
 			<Question>
-				<div>문제 {id}</div>
+				<div data-testid={'question-index'}>문제 {id}</div>
 				{question}
 			</Question>
 			<QuizList>
 				{problemList.map((item, index) => (
 					<QuizContent
+						data-testid={`${index}-quiz-item`}
 						key={index}
 						isSelected={item === selectedQuizItem}
 						onClick={() => onQuizItemClick(item)}

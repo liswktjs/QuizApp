@@ -11,7 +11,11 @@ const CreatePortal = ({
 }: PropsWithChildren<CreatePortalProps>) => {
 	const modalElement = document.getElementById(modalId);
 	if (modalElement === null) {
-		throw new Error('모달을 찾을 수 없습니다');
+		const modal = document.createElement('div');
+		modal.className = modalId;
+		document.body.appendChild(modal);
+
+		return ReactDOM.createPortal(children, modal);
 	}
 	return ReactDOM.createPortal(children, modalElement);
 };
