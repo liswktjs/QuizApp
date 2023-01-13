@@ -18,9 +18,9 @@ const QuizResult = () => {
 		<S.Container>
 			<S.Title>풀이 결과</S.Title>
 			<S.Report>
-				<div>정답 : {rightCount}개</div>
-				<div>오답 : {wrongCount}개</div>
-				<div>총 소요 시간: {takingTime}</div>
+				<div data-testid={'answer-count'}>정답 : {rightCount}개</div>
+				<div data-testid={'wrong-answer-count'}>오답 : {wrongCount}개</div>
+				<div data-testid={'total-count'}>총 소요 시간: {takingTime}</div>
 			</S.Report>
 			<S.ChartContainer>
 				<Chart
