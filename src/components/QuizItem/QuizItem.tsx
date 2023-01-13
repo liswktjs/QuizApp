@@ -24,7 +24,7 @@ const QuizItem = ({
 			<QuizList>
 				{problemList.map((item, index) => (
 					<QuizContent
-						data-testid={`${index}-quiz-item`}
+						data-testid={'quiz-item'}
 						key={index}
 						isSelected={item === selectedQuizItem}
 						onClick={() => onQuizItemClick(item)}
