@@ -1,0 +1,101 @@
+{
+	"response_code": 0,
+	"results": [
+		{
+			"category": "Science & Nature",
+			"type": "multiple",
+			"difficulty": "easy",
+			"question": "What is the powerhouse of the cell?",
+			"correct_answer": "Mitochondria",
+			"incorrect_answers": ["Ribosome", "Redbull", "Nucleus"]
+		},
+		{
+			"category": "Entertainment: Japanese Anime & Manga",
+			"type": "multiple",
+			"difficulty": "easy",
+			"question": "In &quot;The Melancholy of Haruhi Suzumiya&quot; series, the SOS Brigade club leader is unknowingly treated as a(n) __ by her peers.",
+			"correct_answer": "God",
+			"incorrect_answers": ["Alien", "Time Traveler", "Esper"]
+		},
+		{
+			"category": "Celebrities",
+			"type": "multiple",
+			"difficulty": "medium",
+			"question": "What was the name of Marilyn Monroe&#039;s first husband?",
+			"correct_answer": "James Dougherty",
+			"incorrect_answers": ["Joe Dimaggio", "Kirk Douglas", "Arthur Miller"]
+		},
+		{
+			"category": "Sports",
+			"type": "multiple",
+			"difficulty": "easy",
+			"question": "What year did the New Orleans Saints win the Super Bowl?",
+			"correct_answer": "2010",
+			"incorrect_answers": ["2008", "2009", "2011"]
+		},
+		{
+			"category": "Entertainment: Books",
+			"type": "multiple",
+			"difficulty": "medium",
+			"question": "In the &quot;Harry Potter&quot; novels, what must a Hogwarts student do to enter the Ravenclaw Common Room?",
+			"correct_answer": "Answer a riddle",
+			"incorrect_answers": [
+				"Rhythmically tap barrels with a wand",
+				"Speak a password",
+				"Knock in sequence"
+			]
+		},
+		{
+			"category": "Entertainment: Cartoon & Animations",
+			"type": "multiple",
+			"difficulty": "medium",
+			"question": "In &quot;The Simpsons&quot;, where did Homer and Marge first meet?",
+			"correct_answer": "At Summer Camp",
+			"incorrect_answers": [
+				"At High School",
+				"At Church",
+				"At 742 Evergreen Terrace"
+			]
+		},
+		{
+			"category": "Entertainment: Film",
+			"type": "multiple",
+			"difficulty": "hard",
+			"question": "Which of the following films was directed by Ivan Reitman, written by Gary Ross, featured Kevin Kline, and was released in 1993?",
+			"correct_answer": "Dave",
+			"incorrect_answers": ["John", "Will", "Carl"]
+		},
+		{
+			"category": "Entertainment: Film",
+			"type": "multiple",
+			"difficulty": "easy",
+			"question": "Who directed the Kill Bill movies?",
+			"correct_answer": "Quentin Tarantino",
+			"incorrect_answers": [
+				"Arnold Schwarzenegger",
+				"David Lean",
+				"Stanley Kubrick"
+			]
+		},
+		{
+			"category": "Entertainment: Video Games",
+			"type": "multiple",
+			"difficulty": "easy",
+			"question": "Which of the following is NOT one of the main characters in Grand Theft Auto V&rsquo;s story mode?",
+			"correct_answer": "Tommy Vercetti",
+			"incorrect_answers": [
+				"Michael de Santa",
+				"Franklin Clinton",
+				"Trevor Phillips"
+			]
+		},
+		{
+			"category": "Entertainment: Video Games",
+			"type": "multiple",
+			"difficulty": "medium",
+			"question": "Which country is featured in Ace Combat 5: The Unsung War?",
+			"correct_answer": "Osea",
+			"incorrect_answers": ["Aurelia", "Australia", "Japan"]
+		}
+	]
+}
