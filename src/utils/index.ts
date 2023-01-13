@@ -22,6 +22,9 @@ export const changeCodeToString = (content: string) => {
 	content = content.replaceAll('&quot;', '');
 	content = content.replaceAll('&nbsp;', ' ');
 	content = content.replaceAll('&amp;', '&');
-
+	content = content.replaceAll('&ograve;', 'O');
+	content = content.replaceAll('&#039;', `'`);
+	content = content.replaceAll('&Uuml;', 'U');
+	content = content.replaceAll('&eacute;', 'é');
 	return content;
 };
