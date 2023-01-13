@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "jest",
 		"start": "webpack serve --open --config webpack/webpack.js",
-		"build": "webpack --mode=development --config webpack/webpack.js",
+		"build": "webpack --mode=production --config webpack/webpack.js",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
@@ -50,6 +50,7 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/react-hooks": "^8.0.1",
+		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.5",
 		"@types/react": "^18.0.26",
 		"@types/react-dom": "^18.0.10",
