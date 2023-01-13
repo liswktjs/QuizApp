@@ -1,9 +1,9 @@
-import { useAtomValue } from 'jotai';
+import { useAtomValue, useSetAtom } from 'jotai';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { queryClient } from '../../../';
 
-import { gameReportAtom } from '../../../store';
+import { gameReportAtom, gameTakingTime } from '../../../store';
 import {
 	QuizResponseType,
 	UserAnswerItemType,
@@ -18,6 +18,8 @@ const useWrongAnswerNoteState = () => {
 		'quiz',
 	]);
 	const userQuizInfo: UserAnswerItemType[] = useAtomValue(gameReportAtom);
+	const setGameReportState = useSetAtom(gameReportAtom);
+	const setGameTakingTime = useSetAtom(gameTakingTime);
 
 	const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
 
@@ -52,6 +54,8 @@ const useWrongAnswerNoteState = () => {
 	};
 
 	const onFinalButtonClick = () => {
+		setGameReportState([]);
+		setGameTakingTime({ min: 0, sec: 0 });
 		navigate('/');
 	};
 

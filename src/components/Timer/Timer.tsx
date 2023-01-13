@@ -40,9 +40,18 @@ const Timer = () => {
 	}, [isProgress, isEnd]);
 
 	useEffect(() => {
+		setTimer(0);
+		setMin(0);
+		setSec(0);
+	}, []);
+
+	useEffect(() => {
 		if (isEnd) {
 			setTakingTime({ min, sec });
 			setTimerClassName(styles.isNoShow);
+			setTimer(0);
+			setMin(0);
+			setSec(0);
 		}
 	}, [isEnd]);
 
