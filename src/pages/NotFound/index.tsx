@@ -1,12 +1,19 @@
+import { useSetAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 import Button from '../../components/@common/Button/Button';
 
+import { gameReportAtom, gameTakingTime } from '../../store';
+
 const NotFound = () => {
 	const navigate = useNavigate();
+	const setGameReportState = useSetAtom(gameReportAtom);
+	const setGameTakingTime = useSetAtom(gameTakingTime);
 
 	const onHomeButtonClick = () => {
+		setGameReportState([]);
+		setGameTakingTime({ min: 0, sec: 0 });
 		navigate('/');
 	};
 	return (

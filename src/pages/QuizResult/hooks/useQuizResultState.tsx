@@ -1,4 +1,4 @@
-import { useAtomValue } from 'jotai';
+import { useAtomValue, useSetAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ const useQuizResultState = () => {
 	const navigate = useNavigate();
 	const userQuizInfo: UserAnswerItemType[] = useAtomValue(gameReportAtom);
 	const { min, sec } = useAtomValue(gameTakingTime);
+	const setGameReportState = useSetAtom(gameReportAtom);
+	const setGameTakingTime = useSetAtom(gameTakingTime);
 
 	const [takingTime, setTakingTime] = useState('');
 
@@ -41,6 +43,8 @@ const useQuizResultState = () => {
 	};
 
 	const onHomeButtonClick = () => {
+		setGameReportState([]);
+		setGameTakingTime({ min: 0, sec: 0 });
 		navigate('/');
 	};
 
