@@ -7,6 +7,7 @@ module.exports = {
 	moduleFileExtensions: ['tsx', 'ts', 'js', 'json', 'node'],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
+		'\\.(css|less)$': '<rootDir>/jest.setup.js',
 	},
 	collectCoverage: false,
 	collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
